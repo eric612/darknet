@@ -1,0 +1,1 @@
+./darknet detector valid cfg/voc.data cfg/yolov2-voc.cfg yolov2-voc.backup 
