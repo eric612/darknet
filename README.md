@@ -1,5 +1,7 @@
 # Darknet retrain YOLOv2 in 4 classes (VOC0712) 
 
+Train on VOC2007,2012 and test on VOC2007
+
 Class|YOLOv2-416|YOLOv2-448|YOLOv2-320
 :---:|:---:|:---:|:---:
 bus|0.7804|0.7949|0.7536
