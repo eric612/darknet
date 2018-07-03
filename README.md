@@ -8,9 +8,18 @@ motorbike|0.7960|0.8042|0.7424
 person|0.7475|0.7600|0.6909
 mAP|0.7783|0.7886|0.7313
 
-## Training Data Prepare
+## Build
+
+```
+git clone https://github.com/eric612/darknet.git
+cd $darknet_root
+make 
+```
+
+## Data Prepare
 
 cd $darknet_root/data/voc/
+
 ```
 wget https://pjreddie.com/media/files/VOCtrainval_11-May-2012.tar
 wget https://pjreddie.com/media/files/VOCtrainval_06-Nov-2007.tar
@@ -34,8 +43,9 @@ sh calc_mAP.sh
 ## Train
 
 cd $darknet_root/
-wget https://pjreddie.com/media/files/darknet19_448.conv.23
+
 ```
+wget https://pjreddie.com/media/files/darknet19_448.conv.23
 ./darknet detector train cfg/voc.data cfg/yolov2-voc.cfg darknet19_448.conv.23
 ```
 ## Python version 
