@@ -4,7 +4,7 @@ import os
 from os import listdir, getcwd
 from os.path import join
 
-sets=[('2017', 'trainval'), ('2017', 'test')]
+sets=[('2012', 'train'), ('2012', 'val'), ('2007', 'train'), ('2007', 'val'), ('2007', 'test')]
 
 classes = ["bus", "car", "motorbike", "person"]
 
