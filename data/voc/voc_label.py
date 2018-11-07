@@ -6,7 +6,8 @@ from os.path import join
 
 sets=[('2012', 'train'), ('2012', 'val'), ('2007', 'train'), ('2007', 'val'), ('2007', 'test')]
 
-classes = ["bus", "car", "motorbike", "person"]
+classes = ["aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
+classes2 = ["bus", "car","motorbike", "person"]
 
 
 def convert(size, box):
@@ -34,9 +35,15 @@ def convert_annotation(year, image_id):
     for obj in root.iter('object'):
         difficult = obj.find('difficult').text
         cls = obj.find('name').text
-        if cls not in classes or int(difficult) == 1:
+        #if cls not in classes or int(difficult) == 1:
+        #    continue
+        #if cls == "bicycle":
+        #    cls = "motorbike"
+        if cls not in classes2 :
+            #print(cls)
             continue
-        cls_id = classes.index(cls)
+
+        cls_id = classes2.index(cls)
         xmlbox = obj.find('bndbox')
         b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(xmlbox.find('ymin').text), float(xmlbox.find('ymax').text))
         bb = convert((w,h), b)
@@ -53,4 +60,3 @@ for year, image_set in sets:
         list_file.write('%s/VOCdevkit/VOC%s/JPEGImages/%s.jpg\n'%(wd, year, image_id))
         convert_annotation(year, image_id)
     list_file.close()
-
