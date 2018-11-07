@@ -44,7 +44,9 @@ sh calc_mAP.sh
 ```
 ## Train
 
-cd $darknet_root/
+* Unmark cfg/yolov2-voc.cfg training batch size
+
+* cd $darknet_root/
 
 ```
 wget https://pjreddie.com/media/files/darknet19_448.conv.23
