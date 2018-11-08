@@ -4,11 +4,11 @@ Train on VOC2007,2012 and test on VOC2007
 
 Class|YOLOv2-416|YOLOv2-448|YOLOv2-320
 :---:|:---:|:---:|:---:
-bus|0.7804|0.7949|0.7536
-car|0.7893|0.7955|0.7384
-motorbike|0.7960|0.8042|0.7424
-person|0.7475|0.7600|0.6909
-mAP|0.7783|0.7886|0.7313
+bus|0.836|0.839|0.816
+car|0.822|0.839|0.780
+motorbike|0.837|0.8042|0.781
+person|0.775|0.780|0.724
+mAP|0.8135|0.8238|0.7752
 
 ## Build
 
@@ -35,7 +35,7 @@ cat 2007_train.txt 2007_val.txt 2012_*.txt > train.txt
 
 ## Vaild mAP
 
-download [weights](https://drive.google.com/open?id=1kOO7gM_foAOTGy1fMpP2w7L_BXqxc-UZ) , save at $darknet root
+download [weights](https://drive.google.com/open?id=15aMa8R8FlnQv6Tl2lvQYWSZBo6xK4jWV) , save at $darknet root
 
 cd $darknet_root/
 ```
